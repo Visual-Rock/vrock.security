@@ -1,0 +1,7 @@
+[wrap-git]
+url=https://github.com/Visual-Rock/vrock.utils
+revision=head
+depth=1
+
+[provide]
+vrockutils=vrockutils_dep
