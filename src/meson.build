@@ -8,7 +8,7 @@ header = [
 
 public_header = include_directories('../include')
 
-utilslib_dep = dependency('vrockutils', fallback: ['vrockutils', 'vrockutils_dep'], default_options: ['tests=true'])
+utilslib_dep = dependency('vrockutils', fallback: ['vrockutils', 'vrockutils_dep'])
 
 securitylib = static_library(meson.project_name(), src,
     include_directories: public_header
