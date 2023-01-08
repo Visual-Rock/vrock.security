@@ -1,7 +1,7 @@
 #include "vrock/security/encryption/RC4.hpp"
 
 #include <iostream>
-#include<iomanip>
+#include <iomanip>
 
 int main()
 {

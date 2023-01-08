@@ -7,7 +7,7 @@ Welcome to vrock.security's documentation!
 =======================================
 
 The vrock.security module is a collection of encryption and hash algorithms used thru out the vrock Libs ecosystem. 
-It contains encryption algorithms like RC4 or AES and hash algorithms.  
+It utilizes the powerful cryptopp library under the hood to provide genuine and fast results.  
 
 .. toctree::
    :glob:

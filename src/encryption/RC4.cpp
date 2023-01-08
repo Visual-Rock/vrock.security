@@ -1,45 +1,25 @@
 #include "vrock/security/encryption/RC4.hpp"
 
-#include <cassert>
 #include <iostream>
+#include <stdexcept>
+
+#define CRYPTOPP_ENABLE_NAMESPACE_WEAK 1
+#include "cryptopp/arc4.h"
 
 namespace vrock::security::RC4 {
-    void swap(std::shared_ptr<utils::ByteArray> data, size_t i, size_t j)
-    {
-        uint8_t tmp = data->data[i];
-        data->data[i] = data->data[j];
-        data->data[j] = tmp;
-    }
-
     std::shared_ptr<utils::ByteArray> encrypt(std::shared_ptr<utils::ByteArray> data, std::shared_ptr<utils::ByteArray> key)
     {
-        // generate S-Box
-        auto s = std::make_shared<utils::ByteArray>(256);
-        {
-            for (size_t i = 0; i < 256; ++i)
-                s->set(i, i);
+        CryptoPP::Weak::ARC4 rc4;
 
-            size_t j = 0;
-            for (size_t i = 0; i < 256; ++i) {
-                j = (j + s->get(i) + key->get(i % key->length)) % 256;
-                swap(s, i, j);
-            }
-        }
+        if (rc4.MaxKeyLength() < key->length && rc4.MinKeyLength() > key->length)
+            throw std::invalid_argument("the key was of invalid length");
 
-        auto cypher = std::make_shared<utils::ByteArray>(data->length);
+        rc4.SetKey(key->data, key->length);
+        auto encr = std::make_shared<utils::ByteArray>(data->length);
 
-        size_t i = 0; size_t j = 0;
-        uint8_t num;
-        for (size_t n = 0; n < data->length; ++n)
-        {
-            i = (i + 1) % 256;
-            j = (j + s->get(i)) % 256;
-            swap(s, i, j);
-            num = s->get((s->get(i) + s->get(j)) % 256);
-            cypher->set(n, num ^ data->get(n));
-        }
+        rc4.ProcessData(encr->data, data->data, data->length);
 
-        return cypher;
+        return encr;
     }
 
     std::shared_ptr<utils::ByteArray> decrypt(std::shared_ptr<utils::ByteArray> data, std::shared_ptr<utils::ByteArray> key)

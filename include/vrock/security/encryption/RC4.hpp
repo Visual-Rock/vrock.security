@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 #include "vrock/utils/ByteArray.hpp"
 
 namespace vrock::security::RC4 {

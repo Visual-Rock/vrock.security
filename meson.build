@@ -1,4 +1,4 @@
-project('vrocksecurity', 'cpp', version: '0.0.2')
+project('vrocksecurity', 'cpp', version: '0.0.2', default_options : ['cpp_std=c++17'])
 
 subdir('src/')
 
