@@ -6,7 +6,7 @@
 #define CRYPTOPP_ENABLE_NAMESPACE_WEAK 1
 #include "cryptopp/arc4.h"
 
-namespace vrock::security::RC4 {
+namespace vrock::security::encryption::RC4 {
     std::shared_ptr<utils::ByteArray> encrypt(std::shared_ptr<utils::ByteArray> data, std::shared_ptr<utils::ByteArray> key)
     {
         CryptoPP::Weak::ARC4 rc4;

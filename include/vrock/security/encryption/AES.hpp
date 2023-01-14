@@ -2,7 +2,7 @@
 
 #include "vrock/utils/ByteArray.hpp"
 
-namespace vrock::security::AES {
+namespace vrock::security::encryption::AES {
     /// @brief Encrypts the data with AES in GCM mode
     /// @param data data to encrypt
     /// @param key key for the encryption

@@ -1,11 +1,15 @@
 src = [
     'encryption/RC4.cpp',
-    'encryption/AES.cpp'
+    'encryption/AES.cpp',
+
+    'hash/MD5.cpp'
 ]
 
 header = [
     '../include/vrock/security/encryption/RC4.hpp',
-    '../include/vrock/security/encryption/AES.hpp'
+    '../include/vrock/security/encryption/AES.hpp',
+
+    '../include/vrock/security/hash/MD5.hpp'
 ]
 
 public_header = include_directories('../include')

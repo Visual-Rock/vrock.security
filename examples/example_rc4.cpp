@@ -8,7 +8,7 @@ int main()
     auto data = std::make_shared<vrock::utils::ByteArray>("Plaintext");
     auto key = std::make_shared<vrock::utils::ByteArray>("Key");
 
-    auto encrypted = vrock::security::RC4::encrypt(data, key);
+    auto encrypted = vrock::security::encryption::RC4::encrypt(data, key);
 
     for (int i = 0; i < encrypted->length; ++i)
     {
@@ -16,5 +16,5 @@ int main()
     }
     std::cout << std::endl;
 
-    std::cout << vrock::security::RC4::decrypt(encrypted, key)->to_string() << std::endl;
+    std::cout << vrock::security::encryption::RC4::decrypt(encrypted, key)->to_string() << std::endl;
 }

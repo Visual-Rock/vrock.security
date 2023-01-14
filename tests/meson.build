@@ -2,7 +2,9 @@ if get_option('tests')
 
 test_src = [
     'encryption/rc4.test.cpp',
-    'encryption/aes.test.cpp'
+    'encryption/aes.test.cpp',
+
+    'hash/MD5.test.cpp'
 ]
 
 gtest_proj = subproject('gtest')

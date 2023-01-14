@@ -9,7 +9,7 @@
 #include <cryptopp/gcm.h>
 #include <iostream>
 
-namespace vrock::security::AES {
+namespace vrock::security::encryption::AES {
 
     std::shared_ptr<utils::ByteArray> encrypt_gcm(std::shared_ptr<utils::ByteArray> data, std::shared_ptr<utils::ByteArray> key, std::shared_ptr<utils::ByteArray> iv, std::shared_ptr<utils::ByteArray> authentication_data)
     {

@@ -2,7 +2,7 @@
 
 #include "vrock/utils/ByteArray.hpp"
 
-namespace vrock::security::RC4 {
+namespace vrock::security::encryption::RC4 {
     /// @brief encrypts data using the RC4 algorithm
     /// @param data data to encrypt
     /// @param key key for encryption 
