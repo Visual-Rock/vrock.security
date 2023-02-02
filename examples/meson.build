@@ -18,4 +18,10 @@ example_MD5 = executable(
     dependencies: securitylib_dep
 )
 
+# SHA2 Example
+example_MD5 = executable(
+    'example_sha2', 'example_sha2.cpp',
+    dependencies: securitylib_dep
+)
+
 endif

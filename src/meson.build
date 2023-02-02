@@ -2,7 +2,8 @@ src = [
     'encryption/RC4.cpp',
     'encryption/AES.cpp',
 
-    'hash/MD5.cpp'
+    'hash/MD5.cpp',
+    'hash/SHA2.cpp'
 ]
 
 header = [

@@ -10,7 +10,7 @@ int main()
 
     auto encrypted = vrock::security::encryption::RC4::encrypt(data, key);
 
-    for (int i = 0; i < encrypted->length; ++i)
+    for (size_t i = 0; i < encrypted->length; ++i)
     {
         std::cout << std::setw(2) << std::setfill('0') << std::hex << (int)encrypted->data[i] << ' ';
     }
