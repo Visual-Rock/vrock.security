@@ -19,8 +19,14 @@ example_MD5 = executable(
 )
 
 # SHA2 Example
-example_MD5 = executable(
+example_SHA2 = executable(
     'example_sha2', 'example_sha2.cpp',
+    dependencies: securitylib_dep
+)
+
+# Random Example
+example_Random = executable(
+    'example_random', 'example_random.cpp',
     dependencies: securitylib_dep
 )
 
