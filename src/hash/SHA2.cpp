@@ -4,39 +4,39 @@
 
 namespace vrock::security::hash::SHA2
 {
-    std::shared_ptr<utils::ByteArray> sha224(std::shared_ptr<utils::ByteArray> data)
+    auto sha224( const std::shared_ptr<utils::ByteArray> &data ) -> std::shared_ptr<utils::ByteArray>
     {
         CryptoPP::SHA224 hash;
-        auto hashed = std::make_shared<utils::ByteArray>(hash.DigestSize());
-        hash.Update(data->data, data->length);
-        hash.Final(hashed->data);
+        auto hashed = std::make_shared<utils::ByteArray>( hash.DigestSize( ) );
+        hash.Update( data->data, data->length );
+        hash.Final( hashed->data );
         return hashed;
     }
 
-    std::shared_ptr<utils::ByteArray> sha256(std::shared_ptr<utils::ByteArray> data)
+    auto sha256( const std::shared_ptr<utils::ByteArray> &data ) -> std::shared_ptr<utils::ByteArray>
     {
         CryptoPP::SHA256 hash;
-        auto hashed = std::make_shared<utils::ByteArray>(hash.DigestSize());
-        hash.Update(data->data, data->length);
-        hash.Final(hashed->data);
+        auto hashed = std::make_shared<utils::ByteArray>( hash.DigestSize( ) );
+        hash.Update( data->data, data->length );
+        hash.Final( hashed->data );
         return hashed;
     }
 
-    std::shared_ptr<utils::ByteArray> sha384(std::shared_ptr<utils::ByteArray> data)
+    auto sha384( const std::shared_ptr<utils::ByteArray> &data ) -> std::shared_ptr<utils::ByteArray>
     {
         CryptoPP::SHA384 hash;
-        auto hashed = std::make_shared<utils::ByteArray>(hash.DigestSize());
-        hash.Update(data->data, data->length);
-        hash.Final(hashed->data);
+        auto hashed = std::make_shared<utils::ByteArray>( hash.DigestSize( ) );
+        hash.Update( data->data, data->length );
+        hash.Final( hashed->data );
         return hashed;
     }
 
-    std::shared_ptr<utils::ByteArray> sha512(std::shared_ptr<utils::ByteArray> data)
+    auto sha512( const std::shared_ptr<utils::ByteArray> &data ) -> std::shared_ptr<utils::ByteArray>
     {
         CryptoPP::SHA512 hash;
-        auto hashed = std::make_shared<utils::ByteArray>(hash.DigestSize());
-        hash.Update(data->data, data->length);
-        hash.Final(hashed->data);
+        auto hashed = std::make_shared<utils::ByteArray>( hash.DigestSize( ) );
+        hash.Update( data->data, data->length );
+        hash.Final( hashed->data );
         return hashed;
     }
-}
+} // namespace vrock::security::hash::SHA2
